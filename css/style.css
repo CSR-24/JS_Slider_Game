@@ -1,0 +1,60 @@
+#grid {
+  position: relative;
+  top: 10px;
+  left: 70px;
+}
+#playBoard {
+  width: 680px;
+  height: 680px;
+  border-radius: 0px;
+  background: lightblue;
+}
+.box {
+  font-family: 'Times New Roman';
+  font-size: 30px;
+  width: 170px;
+  height: 170px;
+  background: steelBlue;
+  float: left;
+  line-height: 170px;
+  text-align: center;
+  border-color: lightblue;
+  border-style: inset;
+  color: white;
+}
+#controlPanel {
+  position: absolute;
+  top: 560px;
+  left: 5px;
+  width: 680px;
+  height: 125px;
+}
+#movesInc {
+  position: absolute;
+  font-family: 'Times New Roman';
+  top: 20px;
+  left: 150px;
+  right: 250px;
+  bottom: 0px;
+  font-weight: bold;
+  color: black;
+}
+#msg {
+  position: absolute;
+  top: 60px;
+  left: 150px;
+  bottom: 0px;
+  right: 250px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Times New Roman';
+}
+#shuffle {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: 35px;
+  bottom: 0px;
+  left: 400px;
+  right: 0px;
+}
