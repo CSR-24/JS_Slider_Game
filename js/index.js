@@ -8,29 +8,50 @@ function refreshGrid(target, text){
   $(target).text(text);
 }
 
+function isValidPattern(pattern){
+  var inversion = 0;
+  for (i=0; i<9;i++){
+    for (j=i+1;j<9;j++){
+      if(pattern[i]!='-' && pattern[j]!= '-' && parseInt(pattern[i]) > parseInt(pattern[j])){
+        inversion++;
+      }
+    }
+  }
+  if(inversion%2 === 0){ 
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
 function shuffleBoard(){
   var newBoardPattern = _.shuffle(['1', '2' , '3', '4', '5', '6', '7', '8', '-']);
-  $('.box').each(function(){
-    var id = '#'+this.id;
-    if ($(id).text() === '-'){
-      $(id).css('background-color', 'steelBlue');
-    }
-  });
-  $('#s1').text(newBoardPattern[0]);
-  $('#s2').text(newBoardPattern[1]);
-  $('#s3').text(newBoardPattern[2]);
-  $('#s4').text(newBoardPattern[3]);
-  $('#s5').text(newBoardPattern[4]);
-  $('#s6').text(newBoardPattern[5]);
-  $('#s7').text(newBoardPattern[6]);
-  $('#s8').text(newBoardPattern[7]);
-  $('#s9').text(newBoardPattern[8]);
-  $('.box').each(function(){
-    var id = '#'+this.id;
-    if ($(id).text() === '-'){
-      $(id).css('background-color', 'lightblue');
-    }
-  });
+  if(isValidPattern(newBoardPattern)){
+    $('.box').each(function(){
+      var id = '#'+this.id;
+      if ($(id).text() === '-'){
+        $(id).css('background-color', 'steelBlue');
+      }
+    });
+    $('#s1').text(newBoardPattern[0]);
+    $('#s2').text(newBoardPattern[1]);
+    $('#s3').text(newBoardPattern[2]);
+    $('#s4').text(newBoardPattern[3]);
+    $('#s5').text(newBoardPattern[4]);
+    $('#s6').text(newBoardPattern[5]);
+    $('#s7').text(newBoardPattern[6]);
+    $('#s8').text(newBoardPattern[7]);
+    $('#s9').text(newBoardPattern[8]);
+    $('.box').each(function(){
+      var id = '#'+this.id;
+      if ($(id).text() === '-'){
+        $(id).css('background-color', 'lightblue');
+      }
+    });
+  } else {
+    shuffleBoard();
+  }
 }
 
 function checkGoal() {
@@ -136,7 +157,6 @@ function ruleEngine(sourceId, targetId){
 
 function startGame(){
   startListners();
-  shuffleBoard();
 }
 
 function updateMessage(msg, color){
