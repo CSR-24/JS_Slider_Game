@@ -1,4 +1,4 @@
-var moves = 0;
+var moves = 1;
 function startListners(){
   $('.box').on('click', checkRule);
   $('#shuffle').on('click', shuffleBoard);
@@ -49,25 +49,28 @@ function shuffleBoard(){
         $(id).css('background-color', 'lightblue');
       }
     });
+    startGame();
   } else {
     shuffleBoard();
   }
 }
 
 function checkGoal() {
-   if ($('#s1').text() === '1' && 
-       $('#s2').text() === '2' && 
-       $('#s3').text() === '3' && 
-       $('#s4').text() === '4' && 
-       $('#s5').text() === '5' && 
-       $('#s6').text() === '6' && 
-       $('#s7').text() === '7' &&
-       $('#s8').text() === '8' && 
-       $('#s9').text() === '-'){
+  var count = 0, loop = 1;
+  $('.box').each(function(){
+    var id = '#'+this.id;
+    if (parseInt($(id).text()) === loop++){
+      $(id).css('color', 'yellow');
+      count++;
+    } else {
+      $(id).css('color', 'white');
+    }
+  });
+  if (count === 8){
      return true;
-   } else {
+  } else {
      return false;
-   }
+  }
 }
 
 function checkRule(){
@@ -88,7 +91,7 @@ function checkRule(){
           $('.box').off('click');
         }
         $('#movesInc').text('Number Of Moves : '+moves++);
-      } else {
+      } else if (sourceId != id) {
         updateMessage('Invaid Move! Click on a vaid tile.', 'Red');
       }
       return false;
@@ -157,6 +160,10 @@ function ruleEngine(sourceId, targetId){
 
 function startGame(){
   startListners();
+  checkGoal();
+  $('#msg').text('Game Messages');
+  $('#movesInc').text('Number Of Moves : 0');
+  moves = 1;
 }
 
 function updateMessage(msg, color){
