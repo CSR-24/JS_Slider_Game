@@ -1,7 +1,7 @@
 #grid {
   position: relative;
   top: 10px;
-  left: 70px;
+  left: 58px;
 }
 #playBoard {
   width: 560px;
@@ -24,7 +24,7 @@
 }
 #controlPanel {
   position: absolute;
-  top: 460px;
+  top: 465px;
   left: 5px;
   width: 560px;
   height: 125px;
@@ -33,8 +33,8 @@
   position: absolute;
   font-family: 'Times New Roman';
   top: 20px;
-  left: 150px;
-  right: 250px;
+  left: 160px;
+  right: 0px;
   bottom: 0px;
   font-weight: bold;
   color: black;
@@ -42,20 +42,20 @@
 #msg {
   position: absolute;
   top: 60px;
-  left: 150px;
+  left: 160px;
   bottom: 0px;
-  right: 250px;
+  right: 0px;
   color: black;
   font-weight: bold;
   font-family: 'Times New Roman';
 }
 #shuffle {
   position: absolute;
-  width: 100px;
-  height: 50px;
-  top: 35px;
+  width: 75px;
+  height: 40px;
+  top: 12px;
   bottom: 0px;
-  left: 320px;
+  left: 430px;
   right: 0px;
 }
 ul.share-buttons {
@@ -72,8 +72,8 @@ ul.share li {
 #winStreak {
   position: absolute;
   font-family: 'Times New Roman';
-  top: 50px;
-  left: 450px;
+  top: 70px;
+  left: 440px;
   right: 0px;
   bottom: 0px;
   font-weight: bold;

@@ -91,7 +91,7 @@ function checkRule(){
         $(sourceId).css('background-color', 'lightblue');
         updateMessage('Vaid Move. Tile: '+sourceText+' moved.' , 'darkBlue');
         if (checkGoal()){
-          updateMessage('You Won.. Puzzle Solved!', 'green');
+          updateMessage('You Won..Puzzle Solved!', 'green');
           $('#winStreak').text('Wins: '+winStreak++);
           $('.box').off('click');
         }
@@ -173,7 +173,7 @@ function startGame(){
 }
 
 function updateMessage(msg, color){
-  $('#msg').text(msg);
+  $('#msg').html(msg);
   $('#msg').css('color', color);  
 }
 
