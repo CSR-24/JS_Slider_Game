@@ -49,7 +49,11 @@ function shuffleBoard(){
         $(id).css('background-color', 'lightblue');
       }
     });
-    startGame();
+  startListners();
+  checkGoal();
+  $('#msg').text('Game Messages');
+  $('#movesInc').text('Number Of Moves : 0');
+  moves = 1;
   } else {
     shuffleBoard();
   }
@@ -160,6 +164,7 @@ function ruleEngine(sourceId, targetId){
 
 function startGame(){
   startListners();
+  shuffleBoard();
   checkGoal();
   $('#msg').text('Game Messages');
   $('#movesInc').text('Number Of Moves : 0');
