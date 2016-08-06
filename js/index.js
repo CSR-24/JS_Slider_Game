@@ -1,4 +1,4 @@
-var moves = 1;
+var moves = 1, winStreak = 1;
 function startListners(){
   $('.box').on('click', checkRule);
   $('#shuffle').on('click', shuffleBoard);
@@ -92,6 +92,7 @@ function checkRule(){
         updateMessage('Vaid Move. Tile: '+sourceText+' moved.' , 'darkBlue');
         if (checkGoal()){
           updateMessage('You Won.. Puzzle Solved!', 'green');
+          $('#winStreak').text('Wins: '+winStreak++);
           $('.box').off('click');
         }
         $('#movesInc').text('Number Of Moves : '+moves++);
