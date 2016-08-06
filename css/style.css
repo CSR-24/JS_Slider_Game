@@ -4,19 +4,19 @@
   left: 70px;
 }
 #playBoard {
-  width: 680px;
-  height: 680px;
+  width: 560px;
+  height: 560px;
   border-radius: 0px;
   background: lightblue;
 }
 .box {
   font-family: 'Times New Roman';
   font-size: 30px;
-  width: 170px;
-  height: 170px;
+  width: 140px;
+  height: 140px;
   background: steelBlue;
   float: left;
-  line-height: 170px;
+  line-height: 140px;
   text-align: center;
   border-color: lightblue;
   border-style: inset;
@@ -24,9 +24,9 @@
 }
 #controlPanel {
   position: absolute;
-  top: 560px;
+  top: 460px;
   left: 5px;
-  width: 680px;
+  width: 560px;
   height: 125px;
 }
 #movesInc {
@@ -55,7 +55,7 @@
   height: 50px;
   top: 35px;
   bottom: 0px;
-  left: 400px;
+  left: 320px;
   right: 0px;
 }
 ul.share-buttons {
@@ -72,8 +72,8 @@ ul.share li {
 #winStreak {
   position: absolute;
   font-family: 'Times New Roman';
-  top: 20px;
-  left: 530px;
+  top: 50px;
+  left: 450px;
   right: 0px;
   bottom: 0px;
   font-weight: bold;
