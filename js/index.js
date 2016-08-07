@@ -26,6 +26,9 @@ function isValidPattern(pattern){
 
 
 function shuffleBoard(){
+  $('#shuffle').css('background', 'white');
+  $('#shuffle').css('color', 'black');
+  $('#shuffle').html('<b>Shuffle Board</b>');
   var newBoardPattern = _.shuffle(['1', '2' , '3', '4', '5', '6', '7', '8', '-']);
   if(isValidPattern(newBoardPattern)){
     $('.box').each(function(){
@@ -62,12 +65,14 @@ function shuffleBoard(){
 function checkGoal() {
   var count = 0, loop = 1;
   $('.box').each(function(){
-    var id = '#'+this.id;
+    var id = '#'+this.id, sid='#s'+this.id;
     if (parseInt($(id).text()) === loop++){
       $(id).css('color', 'yellow');
+       $(sid).css('background', 'lightgreen');
       count++;
     } else {
       $(id).css('color', 'white');
+       $(sid).css('background', 'white');
     }
   });
   if (count === 8){
@@ -94,6 +99,9 @@ function checkRule(){
           updateMessage('Puzzle Solved!', 'green');
           $('#winStreak').text('Wins: '+winStreak++);
           $('.box').off('click');
+          $('#shuffle').css('background', 'red');
+          $('#shuffle').css('color', 'white');
+          $('#shuffle').html('<b>Press Me!</b>');
         }
         $('#movesInc').text('Number Of Moves : '+moves++);
       } else if (sourceId != id) {
