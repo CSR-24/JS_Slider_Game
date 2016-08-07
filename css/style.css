@@ -39,6 +39,22 @@
   font-weight: bold;
   color: black;
 }
+#solution {
+  position: absolute;
+  font-family: 'Times New Roman';
+  width: 80px;
+  height: 60px;
+  top: 18px;
+  left: 330px;
+  right: 0px;
+  bottom: 0px;
+  font-weight: bold;
+  color: black;
+}
+table,
+th {
+  border: 1px solid black;
+}
 #msg {
   position: absolute;
   top: 60px;

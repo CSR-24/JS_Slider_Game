@@ -89,15 +89,15 @@ function checkRule(){
         $(id).css('background-color', 'steelBlue');
         refreshGrid(sourceId, targetText);
         $(sourceId).css('background-color', 'lightblue');
-        updateMessage('Vaid Move. Tile: '+sourceText+' moved.' , 'darkBlue');
+        updateMessage('Vaid Move : '+sourceText, 'darkBlue');
         if (checkGoal()){
-          updateMessage('You Won..Puzzle Solved!', 'green');
+          updateMessage('Puzzle Solved!', 'green');
           $('#winStreak').text('Wins: '+winStreak++);
           $('.box').off('click');
         }
         $('#movesInc').text('Number Of Moves : '+moves++);
       } else if (sourceId != id) {
-        updateMessage('Invaid Move! Click on a vaid tile.', 'Red');
+        updateMessage('Invaid Move!', 'Red');
       }
       return false;
     } 
